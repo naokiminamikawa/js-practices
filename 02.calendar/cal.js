@@ -32,7 +32,7 @@ function cal(year, month) {
 
   for (let date = 1; date <= lastDate.getDate(); date++) {
     const current = new Date(year, month - 1, date);
-    process.stdout.write(date.toString().padStart(2, " ") + " ");
+    process.stdout.write(`${date.toString().padStart(2, " ")} `);
 
     // 土曜日なら改行
     if (current.getDay() === 6) {
