@@ -26,8 +26,12 @@ function cal(year, month) {
   const spaces = "   ".repeat(firstDate.getDay());
   process.stdout.write(spaces);
 
-  for (let date = 1; date <= lastDate.getDate(); date++) {
-    const current = new Date(year, month - 1, date);
+  for (
+    let current = new Date(year, month - 1, 1);
+    current.getMonth() === month - 1;
+    current.setDate(current.getDate() + 1)
+  ) {
+    const date = current.getDate();
     process.stdout.write(`${date.toString().padStart(2, " ")} `);
 
     if (current.getDay() === 6 || date === lastDate.getDate()) {
