@@ -23,20 +23,16 @@ function cal(year, month) {
   console.log(`      ${month}月 ${year}`);
   console.log("日 月 火 水 木 金 土");
 
-  let spaces = "   ".repeat(firstDate.getDay());
+  const spaces = "   ".repeat(firstDate.getDay());
   process.stdout.write(spaces);
 
   for (let date = 1; date <= lastDate.getDate(); date++) {
     const current = new Date(year, month - 1, date);
     process.stdout.write(`${date.toString().padStart(2, " ")} `);
 
-    if (current.getDay() === 6) {
+    if (current.getDay() === 6 || date === lastDate.getDate()) {
       process.stdout.write("\n");
     }
-  }
-
-  if (lastDate.getDay() !== 6) {
-    process.stdout.write("\n");
   }
 }
 
