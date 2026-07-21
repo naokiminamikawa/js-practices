@@ -1,0 +1,19 @@
+{
+  "name": "guitar-scale-cli",
+  "version": "1.0.0",
+  "description": "CLI for guitar scales",
+  "type": "module",
+  "bin": {
+    "guitar-scale": "./bin/guitar-scale.js"
+  },
+  "scripts": {
+    "lint": "prettier --check . && eslint .",
+    "fix": "prettier --write . && eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.5"
+  }
+}
